@@ -8,8 +8,9 @@
 </head>
 
 <body>
+  <%- include('../partials/_navbar.ejs') %>
   <h1>Edit Trip to <%= trip.destination %></h1>
-  <form action="/trips/<%= trip._id %>?_method=PUT" method="POST">
+  <form action="/users/<%= user._id %>/trips/<%= trip._id %>?_method=PUT" method="POST">
     <label for="destination">Destination:</label>
     <input type="text" name="destination" id="destination" value="<%= trip.destination %>" />
 
@@ -37,7 +38,7 @@
 
     <button type="submit">Update Trip</button>
   </form>
-  <a href="/trips/">All Trips</a>
+  <a href="/users/<%= user._id %>/trips/">All Trips</a>
 </body>
 
 </html>

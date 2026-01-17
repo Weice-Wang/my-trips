@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <%- include('../partials/_navbar.ejs') %>
   <h1><%= trip.destination %></h1>
 
   <div class="trip-card">
@@ -31,12 +32,12 @@
   </div>
 
   <div class="actions">
-    <a href="/trips/<%= trip._id %>/edit">Edit</a>
-    <a href="/trips">Back</a>
+    <a href="/users/<%= user._id %>/trips/<%= trip._id %>/edit">Edit</a>
+    <a href="/users/<%= user._id %>/trips">Back</a>
   </div>
 
-  <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete<%= trip.destination %> </button>
+  <form action="/users/<%= user._id %>/trips/<%= trip._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete</button>
   </form>
 </body>
 

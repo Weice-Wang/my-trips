@@ -8,8 +8,9 @@
 </head>
 
 <body>
+  <%- include('../partials/_navbar.ejs') %>
   <h1>Create a New Trip!</h1>
-  <form action="/trips" method="POST">
+  <form action="/users/<%= user._id %>/trips" method="POST">
     <label for="destination">Destination:</label>
     <input type="text" name="destination" id="destination" />
 
@@ -37,7 +38,7 @@
 
     <button type="submit">Add Trip</button>
   </form>
-  <a href="/trips/">All Trips</a>
+  <a href="/users/<%= user._id %>/trips">All Trips</a>
 </body>
 
 </html>

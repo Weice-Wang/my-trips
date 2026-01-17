@@ -8,6 +8,7 @@
 </head>
 
 <body>
+  <%- include('../partials/_navbar.ejs') %>
   <h1>Here are all your trips</h1>
   <table border="1" cellpadding="8" cellspacing="0">
     <tr>
@@ -20,16 +21,16 @@
     <% trips.forEach(trip => { %>
     <tr>
       <td><%= trip.destination %></td>
-      <td><%= trip.startDate.toLocaleDateString('en-AU') %></td>
-      <td><%= trip.endDate.toLocaleDateString('en-AU') %></td>
+      <td><%= trip.startDate?.toLocaleDateString('en-AU')%></td>
+      <td><%= trip.endDate.toLocaleDateString('en-AU')%></td>
       <td>
-        <a href="/trips/<%= trip._id %>">View</a>
-        <a href="/trips/<%= trip._id %>/edit">Edit</a>
+        <a href="/users/<%= user._id %>/trips/<%= trip._id %>">View</a>
+        <a href="/users/<%= user._id %>/trips/<%= trip._id %>/edit">Edit</a>
       </td>
     </tr>
     <% }) %>
   </table>
-  <a href="/trips/new">Add New Trip</a>
+  <a href="/users/<%=user._id%>/trips/new">Add New Trip</a>
 </body>
 
 </html>
